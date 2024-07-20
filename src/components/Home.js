@@ -5,8 +5,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import '../Home.css';
 import Img1 from '../assets/img1.jpg'; // Adjust the path as needed
-import Img2 from '../assets/NIE_8645.JPG';
-import Img3 from '../assets/IMG_1170.JPG';
+import Img2 from '../assets/sharaan-muruvan-r6beCefFwD8-unsplash.jpg';
+import Img3 from '../assets/dino-reichmuth-A5rCN8626Ck-unsplash.jpg';
 
 
 function Home() {
