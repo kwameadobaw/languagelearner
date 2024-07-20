@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link, Navigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faXTwitter } from '@fortawesome/free-brands-svg-icons';
@@ -43,12 +43,16 @@ function ThemedApp({ userName }) {
                         <li>
                             <Link to="/">Home</Link>
                         </li>
-                        <li>
-                            <Link to="/signup">Sign Up</Link>
-                        </li>
-                        <li>
-                            <Link to="/login">Login</Link>
-                        </li>
+                        {!userName && (
+                            <>
+                                <li>
+                                    <Link to="/signup">Sign Up</Link>
+                                </li>
+                                <li>
+                                    <Link to="/login">Login</Link>
+                                </li>
+                            </>
+                        )}
                         <li>
                             <a href="#about-us">About Us</a>
                         </li>
@@ -66,6 +70,7 @@ function ThemedApp({ userName }) {
                 <Route path="/" element={<Home />} />
                 <Route path="/signup" element={<SignUp />} />
                 <Route path="/login" element={<Login />} />
+                <Route path="*" element={<Navigate to="/" />} />
             </Routes>
             <footer className="footer">
                 <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">

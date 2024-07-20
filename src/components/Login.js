@@ -28,7 +28,6 @@ function Login() {
             }
         }
     };
-    
 
     return (
         <div className={`auth-container ${theme}`}>
